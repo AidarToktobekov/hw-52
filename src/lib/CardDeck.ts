@@ -16,9 +16,11 @@ export class CardDeck{
         
         for (let i = 0; i < 4; i++) {1
             for (let j = 0; j < 13; j++) {
-                cards.push(card.getCard(j,i));
+                cards.push(card.setCard(j,i));
             }
         }
+        this.cards.splice(0, 1);
+
     }
     getCard(){
         this.randomNum = Math.floor(Math.random() * 52);
@@ -28,10 +30,9 @@ export class CardDeck{
         return(this.card);
     }
     getCarts(howMany: number){
-        this.cards.splice(0, 1);
-        
+        this.randomCards = [];
         for (let i = 0; i < howMany; i++) {
-            this.randomNum = Math.floor(Math.random() * 52);
+            this.randomNum = Math.floor(Math.random() * this.cards.length);
             this.card = this.cards[this.randomNum];
             this.cards.splice(this.randomNum, 1);
             this.randomCards.push(this.card);
