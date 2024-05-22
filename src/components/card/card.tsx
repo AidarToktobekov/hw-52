@@ -1,6 +1,7 @@
+
 interface Props{
-    rank: string;
-    suit: string;
+    rank?: string;
+    suit?: string;
 }
 
 const Card:React.FC<Props> =({rank, suit})=>{
@@ -27,5 +28,6 @@ const Card:React.FC<Props> =({rank, suit})=>{
         </>
     )
 }
+
 
 export default Card
