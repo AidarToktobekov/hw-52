@@ -2,23 +2,27 @@ import { useState } from 'react';
 import './App.css'
 import Card from './components/card/card.tsx'
 import {CardDeck} from './lib/CardDeck.ts';
-
+import {PokerHand} from './lib/PokerHand.ts';
 
 const App =()=> {
   const cards = new CardDeck;
-  // const randomCards = cards.getCarts(5);
+  let test;
   const [randomCards, setRandomCards] = useState(
-    cards.getCarts(5)
+    test = cards.getCarts(5)
   ) 
 
   const getNewCard = ()=>{
     setRandomCards(
-      cards.getCarts(5)
+      test = cards.getCarts(5)
     )
-  }
+  };
+
+  const pokerHand = new PokerHand(randomCards);
+
   return (
     <>
-    <button className='btn' onClick={getNewCard}>Add</button>
+    <button className='btn' onClick={getNewCard}>App</button>
+    <span className='PokerHand'>Poker Hand: {pokerHand.getOutcome()}</span>
     <div id='playingCards' className="playingCards faceImages">
       <Card rank={randomCards[0].rank} suit={randomCards[0].suit}/>
       <Card rank={randomCards[1].rank} suit={randomCards[1].suit}/>

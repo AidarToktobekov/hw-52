@@ -7,6 +7,6 @@ export class MyCard{
         this.suits = ['diams', 'hearts', 'clubs', 'spades',];
     }
     setCard(rank: number, suit:number){
-        return({rank: this.ranks[rank], suit: this.suits[suit]})
+        return({rank: this.ranks[rank], suit: this.suits[suit]});
     }
 }

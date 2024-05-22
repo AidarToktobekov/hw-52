@@ -24,7 +24,7 @@ export class CardDeck{
     }
     getCard(){
         this.randomNum = Math.floor(Math.random() * 52);
-        this.cards[this.randomNum]
+        this.cards[this.randomNum];
         this.card = this.cards[this.randomNum];
         this.cards.splice(this.randomNum, 1);
         return(this.card);
@@ -36,10 +36,7 @@ export class CardDeck{
             this.card = this.cards[this.randomNum];
             this.cards.splice(this.randomNum, 1);
             this.randomCards.push(this.card);
-        }
-        console.log(this.cards);
-        console.log(this.randomCards);
-        
+        }        
         return(this.randomCards);
     }
 }
